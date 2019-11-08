@@ -30,7 +30,7 @@ exports.up = function(knex) {
                 .references('id')
                 .inTable('species')
                 .onDelete('RESTRICT') // regards deleting recrod from the primary key table
-                // onDelete() can take 'RESTRICT', 'NO ACTION', 'SET NULL'
+                // onDelete() can take 'RESTRICT', 'NO ACTION', 'SET NULL', 'CASCADE'
                 .onUpdate('CASCADE'); // regards chaging the value of the primary key table
         })
         .createTable('ingredients', tbl => {
